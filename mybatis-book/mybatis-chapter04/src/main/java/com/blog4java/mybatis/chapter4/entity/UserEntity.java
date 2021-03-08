@@ -1,4 +1,4 @@
-package com.blog4java.mybatis.example.entity;
+package com.blog4java.mybatis.chapter4.entity;
 
 import lombok.Data;
 

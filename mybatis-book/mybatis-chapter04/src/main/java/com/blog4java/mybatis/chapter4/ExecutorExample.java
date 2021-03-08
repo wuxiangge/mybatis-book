@@ -1,8 +1,8 @@
-package com.blog4java.mybatis.example;
+package com.blog4java.mybatis.chapter4;
 
 import com.alibaba.fastjson.JSON;
 import com.blog4java.common.DbUtils;
-import com.blog4java.mybatis.example.entity.UserEntity;
+import com.blog4java.mybatis.chapter4.entity.UserEntity;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.mapping.MappedStatement;

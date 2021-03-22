@@ -15,10 +15,6 @@
  */
 package org.apache.ibatis.builder.xml;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
-
 import org.apache.ibatis.builder.BuilderException;
 import org.apache.ibatis.builder.IncompleteElementException;
 import org.apache.ibatis.builder.MapperBuilderAssistant;
@@ -28,6 +24,10 @@ import org.apache.ibatis.session.Configuration;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Properties;
 
 /**
  * @author Frank D. Martinez [mnesarco]
@@ -64,7 +64,7 @@ public class XMLIncludeTransformer {
       if (toInclude.getOwnerDocument() != source.getOwnerDocument()) {
         toInclude = source.getOwnerDocument().importNode(toInclude, true);
       }
-      source.getParentNode().replaceChild(toInclude, source);
+      source.getParentNode().replaceChild(toInclude, source);                         // include: “[sql: null]”  source: "[include: null]"
       while (toInclude.hasChildNodes()) {
         toInclude.getParentNode().insertBefore(toInclude.getFirstChild(), toInclude);
       }

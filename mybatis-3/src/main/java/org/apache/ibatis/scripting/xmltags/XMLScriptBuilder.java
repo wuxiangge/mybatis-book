@@ -86,7 +86,7 @@ public class XMLScriptBuilder extends BaseBuilder {
       if (child.getNode().getNodeType() == Node.CDATA_SECTION_NODE || child.getNode().getNodeType() == Node.TEXT_NODE) {
         String data = child.getStringBody("");
         TextSqlNode textSqlNode = new TextSqlNode(data);
-        // 判断SQL文本中包含${}参数占位符，则为动态SQL
+        // 判断SQL文本中包含${}参数占位符，则为动态SQL   张楠 这里是分析 ${} 和 #{}
         if (textSqlNode.isDynamic()) {
           contents.add(textSqlNode);
           isDynamic = true;

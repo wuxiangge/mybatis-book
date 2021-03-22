@@ -50,7 +50,8 @@ public class Example05 {
             statement.addBatch("insert into " +
                     "user (create_time, name, password, phone, nick_name) " +
                     "values('2010-10-24 10:20:30', 'User2', 'test', '18700002222', 'User2');");
-            statement.executeBatch();
+            int[] ints = statement.executeBatch();
+            System.out.println(ints);
             statement.execute("select * from user");
 
             ResultSet result = statement.getResultSet();

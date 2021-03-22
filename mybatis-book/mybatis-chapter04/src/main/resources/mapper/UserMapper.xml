@@ -6,6 +6,17 @@
       id,create_time, name, password, phone, nick_name
     </sql>
 
+
+
+    <select id="getUserByUserId" resultType="com.blog4java.mybatis.chapter4.entity.UserEntity">
+        select
+        <include refid="userAllField"/>
+        from user
+        where id = #{userId,jdbcType=VARCHAR}
+    </select>
+
+
+
     <select id="listAllUser"  resultType="com.blog4java.mybatis.chapter4.entity.UserEntity" >
         select
         <include refid="userAllField"/>
@@ -35,4 +46,6 @@
         from user
         where phone = ${phone}
     </select>
+
+
 </mapper>

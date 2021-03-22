@@ -40,6 +40,8 @@ public class Example09 {
                     "values('2010-10-24 10:20:30','User1','test','18700001111','User1')";
             String sql2 = "insert into user(create_time, name, password, phone, nick_name) " +
                     "values('2010-10-24 10:20:30','User2','test','18700001111','User2')";
+
+            // 这里开启了事务，最后提交了，成功的插入了一条数据。
             conn.setAutoCommit(false);
             Statement stmt = conn.createStatement();
             stmt.executeUpdate(sql1);
@@ -49,7 +51,7 @@ public class Example09 {
             // 回滚到保存点
             conn.rollback(savepoint);
             conn.commit();
-            ResultSet rs  = conn.createStatement().executeQuery("select * from user ");
+            ResultSet rs = conn.createStatement().executeQuery("select * from user ");
             DbUtils.dumpRS(rs);
             IOUtils.closeQuietly(stmt);
             IOUtils.closeQuietly(conn);

@@ -55,7 +55,7 @@ public class MybatisExample {
         // 获取UserMapper代理对象
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
         // 执行Mapper方法，获取执行结果
-        UserEntity userList = userMapper.getUserByUserId("13041942656");
+        UserEntity userList = userMapper.getUserByUserId(2);
          /*
         // 兼容Ibatis，通过Mapper Id执行SQL操作
         List<UserEntity> userList = sqlSession.selectList(

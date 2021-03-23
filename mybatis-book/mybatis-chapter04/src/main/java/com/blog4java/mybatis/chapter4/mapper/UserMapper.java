@@ -9,7 +9,7 @@ import java.util.List;
 public interface UserMapper {
 
 
-    UserEntity getUserByUserId(@Param("userId") String userId);
+    UserEntity getUserByUserId(@Param("userId") Integer userId);
 
     List<UserEntity> getUserByEntity(UserEntity user);
 
